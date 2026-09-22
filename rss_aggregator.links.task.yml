@@ -1,0 +1,23 @@
+rss_aggregator.settings_task:
+  route_name: rss_aggregator.settings
+  base_route: entity.rss_feed.collection
+  title: 'Settings'
+  weight: 20
+
+rss_aggregator.items_task:
+  route_name: entity.rss_item.collection
+  title: 'RSS items'
+  base_route: system.admin_content
+  weight: 15
+
+rss_aggregator.feed_edit_tab:
+  route_name: entity.rss_feed.edit_form
+  base_route: entity.rss_feed.edit_form
+  title: 'Edit'
+  weight: 10
+
+rss_aggregator.feed_import_tab:
+  route_name: rss_aggregator.feed_import
+  base_route: entity.rss_feed.edit_form
+  title: 'Import'
+  weight: 20

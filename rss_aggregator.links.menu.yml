@@ -1,0 +1,20 @@
+rss_aggregator.feeds:
+  title: 'RSS feeds'
+  description: 'Manage external RSS/Atom feed sources.'
+  route_name: entity.rss_feed.collection
+  parent: system.admin_config_services
+  weight: 10
+
+rss_aggregator.items_menu:
+  title: 'RSS items'
+  description: 'Imported RSS/Atom feed items.'
+  route_name: entity.rss_item.collection
+  parent: system.admin_content
+  weight: 5
+
+rss_aggregator.settings_menu:
+  title: 'RSS importer settings'
+  description: 'Configure the RSS importer module.'
+  route_name: rss_aggregator.settings
+  parent: system.admin_config_services
+  weight: 11

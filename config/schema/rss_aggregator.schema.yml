@@ -1,0 +1,39 @@
+rss_aggregator.feed.*:
+  type: config_entity
+  label: 'RSS feed'
+  mapping:
+    id:
+      type: string
+      label: 'Machine name'
+    label:
+      type: label
+      label: 'Name'
+    url:
+      type: uri
+      label: 'Feed URL'
+    refresh_interval:
+      type: integer
+      label: 'Refresh interval (minutes)'
+    description:
+      type: text
+      label: 'Description'
+    status:
+      type: boolean
+      label: 'Enabled'
+    next_refresh:
+      type: integer
+      label: 'Next scheduled refresh'
+    last_refreshed:
+      type: integer
+      label: 'Last refreshed'
+
+rss_aggregator.settings:
+  type: config_object
+  label: 'RSS importer settings'
+  mapping:
+    request_timeout:
+      type: integer
+      label: 'HTTP request timeout (seconds)'
+    item_lifetime:
+      type: integer
+      label: 'Item lifetime (days)'

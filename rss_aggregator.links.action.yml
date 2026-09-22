@@ -1,0 +1,5 @@
+rss_aggregator.feed_add_action:
+  route_name: entity.rss_feed.add_form
+  title: 'Add RSS feed'
+  appears_on:
+    - entity.rss_feed.collection

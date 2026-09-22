@@ -1,0 +1,11 @@
+administer rss importer:
+  title: 'Administer RSS importer'
+  description: 'Create, edit and delete RSS feed sources and configure the module.'
+  restrict access: true
+
+view rss item:
+  title: 'View RSS items'
+
+delete rss item:
+  title: 'Delete RSS items'
+  restrict access: true

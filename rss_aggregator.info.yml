@@ -1,0 +1,10 @@
+name: RSS Aggregator
+type: module
+description: 'Imports external RSS/Atom feeds into a custom content entity using the Queue API.'
+package: Custom
+core_version_requirement: ^10 || ^11
+configure: rss_aggregator.settings
+dependencies:
+  - drupal:system
+  - drupal:text
+  - drupal:link

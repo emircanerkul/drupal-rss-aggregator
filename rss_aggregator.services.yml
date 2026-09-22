@@ -1,0 +1,10 @@
+services:
+  rss_aggregator.feed_fetcher:
+    class: Drupal\rss_aggregator\FeedFetcher
+    arguments:
+      - '@http_client'
+      - '@config.factory'
+      - '@entity_type.manager'
+      - '@datetime.time'
+      - '@queue'
+      - '@logger.factory'

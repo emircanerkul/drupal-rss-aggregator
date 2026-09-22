@@ -1,0 +1,19 @@
+rss_aggregator.feed_import:
+  path: '/admin/config/services/rss-feeds/{rss_feed}/import'
+  defaults:
+    _form: '\Drupal\rss_aggregator\Form\RssFeedImportForm'
+    _title: 'Import RSS feed'
+  requirements:
+    _permission: 'administer rss importer'
+  options:
+    parameters:
+      rss_feed:
+        type: 'entity:rss_feed'
+
+rss_aggregator.settings:
+  path: '/admin/config/services/rss-feeds/settings'
+  defaults:
+    _form: '\Drupal\rss_aggregator\Form\RssAggregatorSettingsForm'
+    _title: 'RSS importer settings'
+  requirements:
+    _permission: 'administer rss importer'
