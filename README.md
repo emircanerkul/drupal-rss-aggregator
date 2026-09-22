@@ -4,7 +4,9 @@ A Drupal 11 custom module that imports external RSS/Atom feeds into dedicated
 content entities, using the Queue API for resumable, cron-friendly processing.
 
 Built as a learning experiment — see the [experiment log](#experiment-log) for
-the interesting bugs found along the way.
+the interesting bugs found along the way, and
+[building with runanywhere.ai](#built-with-runanywhereai) for how the whole
+module was written by an AI agent.
 
 ## Features
 
@@ -202,6 +204,46 @@ After changing a command class, `drush cr` is not enough in some flows; the
 command list is recomputed per request, but instantiation failures only show
 up with `-vvv`. Always debug Drush command registration with `drush -vvv help
 <command>`.
+
+## Built with runanywhere.ai
+
+This entire module was created by an AI coding agent running on
+[runanywhere.ai](https://runanywhere.ai) (DeepSeek Harness, GLM model family) —
+no code was written in a local IDE. The complete workflow, from empty folder to
+a tested, GitHub-published module, happened inside one agentic session.
+
+**How the experiment worked:**
+
+- The agent had direct access to the local filesystem, shell and (escalated)
+  tools — it scaffolded the module, configured a disposable
+  [ddev](https://ddev.com) Drupal 11 environment (Drupal 11.4 / PHP 8.4 /
+  MariaDB) itself, including fixing ddev's Docker provider (installing a
+  buildx plugin, switching router ports).
+- The human drove with short natural-language requests ("use ddev setup some
+  simple drupal and install there to test it", "check again"). Debugging was
+  interactive: the agent ran diagnostics inside the containers, the human
+  pasted browser screenshots, and the agent fixed whatever the screenshots
+  revealed (empty entity page, missing menu tab, Views integration…).
+- Every iteration step — create, install, break, diagnose, fix — was executed
+  live against a real running site, not simulated.
+
+**Token usage for the whole build (per runanywhere.ai dashboard):**
+
+| Metric | Value |
+|---|---|
+| Total tokens | **78,804,843** |
+| Cache hit rate | **99.5%** |
+| Uncached (fresh) input | 368,350 |
+| Cached input | 78,192,640 |
+| Output | 243,853 |
+| Requests | 664 |
+| Spent | **$1.7054** (of a $5 budget, ~$3.29 remaining) |
+
+The striking part: **99.5% of input came from cache.** The conversational
+agent re-reads large context (workspace files, logs, tool outputs) constantly;
+provider-side prompt caching makes that nearly free. The entire build —
+module code, environment setup, debugging cycles, README, Git push — cost
+about **1.7 US dollars** of inference.
 
 ## Page references
 
